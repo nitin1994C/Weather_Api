@@ -28,8 +28,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
-print(SECRET_KEY)
-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -95,18 +93,10 @@ DATABASES = {
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', default='3306'),}}
-# Database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get('DB_NAME'),
-#         'USER': os.environ.get('DB_USER'),
-#         'PASSWORD': os.environ.get('DB_PASSWORD'),
-#         'HOST': os.environ.get('DB_HOST'),
-#         'PORT': os.environ.get('DB_PORT'),
-#     }
-# }
+        'PORT': config('DB_PORT', default='3306'),
+        
+        }}
+
 
 
 # Password validation

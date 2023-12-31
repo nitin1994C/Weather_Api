@@ -25,13 +25,8 @@ class UserRegistrationView(APIView):
 
 
 
-
-
-
-
-
 class WeatherDataView(generics.ListAPIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         # Retrieve latitude, longitude, and number of days from the query parameters

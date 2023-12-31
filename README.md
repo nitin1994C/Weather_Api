@@ -38,7 +38,8 @@ The application integrates with the Open Meto API to fetch hourly temperature, p
 
    ```bash
    git clone https://github.com/nitin1994C/Weather_Api.git
-   cd django-weather-api
+   cd weather_api
+   
 2. pip install -r requirements.txt
 
 3.python manage.py migrate
@@ -48,11 +49,17 @@ The application integrates with the Open Meto API to fetch hourly temperature, p
 ### API Endpoints
 
 Weather Data: http://localhost:8000/api/weather/
+
 User Registration: http://localhost:8000/api/register/
+
 User Authentication  Token Obtain View : http://localhost:8000/api/token/
+
 Refresh token :http://localhost:8000/api/token/refresh/
+
 
 ### Notes
 Don't forget to set your SECRET_KEY and other sensitive settings in the settings.py file.
+
 Customize the database settings for production use.
+
 Ensure proper security measures are taken in a production environment (e.g., HTTPS, secure passwords).

@@ -149,5 +149,5 @@ REST_FRAMEWORK = {
 
 # JWT settings
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Set your desired token lifetime
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60), 
 }

@@ -30,25 +30,25 @@ class WeatherDataViewTest(TestCase):
         self.client = APIClient()
         self.weather_url = '/weather/'
 
+    # Inside WeatherDataViewTest
+
     def test_weather_data_retrieval(self):
-        # Assuming you have a user for authentication
         user = get_user_model().objects.create_user(username='testuser', password='testpassword')
         self.client.force_authenticate(user=user)
 
-        data = {
+        params = {
             'latitude': '52.52',
             'longitude': '13.41',
             'num_days': '7',
         }
-        response = self.client.get(self.weather_url, data)
+        response = self.client.get(self.weather_url, params=params)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        # Add more assertions based on the expected structure of the API response
         self.assertIn('hourly', response.data)
 
     def test_weather_data_invalid_parameters(self):
-        response = self.client.get(self.weather_url)
+        response = self.client.get(self.weather_url, params={'invalid_param': 'value'})
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        # Add more assertions based on the expected error response
         self.assertIn('error', response.data)
+
         
         
